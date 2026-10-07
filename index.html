@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lamplight FM</title>
+  <meta name="description" content="Cozy 3D rooms and slow music, live around the clock.">
+  <meta property="og:title" content="Lamplight FM">
+  <meta property="og:description" content="Cozy 3D rooms and slow music, live around the clock.">
+  <meta property="og:image" content="assets/rain.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="lamp" aria-hidden="true"></span><span data-site="name">Lamplight FM</span></a>
+    <nav>
+      <a href="#schedule">Schedule</a>
+      <a href="#artists">Artists</a>
+      <a class="btn btn-small" data-yt-link href="#">Subscribe</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <canvas id="rain" aria-hidden="true"></canvas>
+      <div class="hero-shade"></div>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span><span id="liveLabel">On air now</span> · <span id="sceneNow">Rainy Loft</span></p>
+          <h1 data-site="name">Lamplight FM</h1>
+          <p class="tagline" data-site="tagline">Cozy 3D rooms and slow music, live around the clock.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#watch">Tune in</a>
+            <a class="btn btn-ghost" data-yt-link href="#">Open on YouTube</a>
+          </div>
+        </div>
+
+        <aside class="now-card" aria-live="polite">
+          <p class="label">Now playing</p>
+          <div class="vinyl" aria-hidden="true"><div class="label-dot"></div></div>
+          <p class="track" id="trackTitle">Window Seat</p>
+          <p class="artist" id="trackArtist">Mây Chiều</p>
+          <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="next">Up next: <span id="trackNext">Last Tram Home</span></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="watch" id="watch">
+      <div class="section-head">
+        <h2>The stream</h2>
+        <p class="muted" id="watchNote">One room, one playlist, never off the air.</p>
+      </div>
+      <div class="player" id="player"></div>
+    </section>
+
+    <section class="schedule" id="schedule">
+      <div class="section-head">
+        <h2>Today in the building</h2>
+        <p class="muted">The room changes with the clock in <span id="tzLabel">Bangkok · Hà Nội</span> time. It's <strong id="clock">--:--</strong> there now.</p>
+      </div>
+      <ol class="slots" id="slots"></ol>
+    </section>
+
+    <section class="artists" id="artists">
+      <div class="section-head">
+        <h2>House artists</h2>
+        <p class="muted">The residents who play the station.</p>
+      </div>
+      <div class="artist-grid" id="artistGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span data-site="name">Lamplight FM</span> · music and rooms made with care, and a little help from AI.</p>
+    <p class="muted small">Visuals are AI-assisted 3D renders. Artists are fictional characters.</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
